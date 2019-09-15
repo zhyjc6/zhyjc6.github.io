@@ -45,8 +45,8 @@ menu:
 customPlugins:
   - use: true
     file: 'plugin-mta-stats.html'
-    sid: 500581966
-    cid: 500581972
+    sid: 500697048
+    cid: 500697053
   - use: true
     file: 'plugin-baidu-push.html'
   - use: true
