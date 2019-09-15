@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei';
-  background: url(static/readme/mobile.jpg);
+  background-image: url(static/readme/mobile.jpg);
   background-size: 100% auto;
   scroll-behavior: smooth;
 }
