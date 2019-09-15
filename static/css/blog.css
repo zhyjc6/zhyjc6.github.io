@@ -3,7 +3,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei';
-  background: #ffffff;
+  background: url(img/logo.jpg);
+  background-size: 100% auto;
   scroll-behavior: smooth;
 }
 ul,
