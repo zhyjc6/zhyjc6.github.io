@@ -1,7 +1,4 @@
 ---
-published: false
----
----
 layout: mypost
 title: test
 categories: [test]
