@@ -4,32 +4,27 @@ isPage: true
 title: 关于我
 ---
 
-> Hello 陌生人，欢迎访问  zhyjc Blog
 
-该博客托管于 GitHub Page，国内默认解析到腾讯云，以保证国内外的访问速度。留言页面使用的是 Bmob 云的免费套餐，另外使用的腾讯的 MTA 分析工具统计访问量
 
-主题使别人写的，见[tmaize-blog](https://github.com/TMaize/tmaize-blog)，欢迎 **Star** 和 **Fork**。另喜欢本博客的欢迎**添加友链**，在[留言板](chat.html)留言即可，我会第一时间处理，就是这样，喵~
+# About Blog
 
-## 相关技能
+关于博客，创于2019年9月14日，依托于GitHub，也希望它能长久如GitHub
 
-- 熟悉 JavaScript 语言， 熟练使用 Vue 全家桶,jQuery 等前端框架
+我的记性实在是太差，过去学的知识也没有地方总结，我希望在茫茫的互联网中有一个属于自己的小窝，让我的知识在那里生根发芽......
 
-- 熟悉 Java，NodeJs,Go 等后端语言
 
-- 后端框架 Spring，Hibernate，JFinal，Mybatis 略有了解
 
-- 数据库方面能熟练使用 MySQL,Oracle，MongoDB
+# About Me
 
-- Linux 的简单使用，各种服务的搭建
+- 很稀有的水瓶男
+- 不爱二次元爱运动的信息安全小咸鱼
+- 嗨！我读过高四，你读过嘛？我和女票一起上过高四，还是同桌！
+- 待续...
 
-- 能够使用 Git/SVN 对代码版本进行控制
 
--以上都是扯淡！！！
 
-## 联系我
+# Contact Me
 
-- QQ : 11012011911
-
-- Email : zhyjc6@qq.com
+- Email : zhyjc6$qq.com
 
 - GitHub : zhyjc6
