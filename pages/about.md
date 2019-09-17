@@ -6,7 +6,7 @@ title: About
 
 
 
-# About Blog
+## About Blog
 
 关于博客，创于2019年9月14日，依托于GitHub，也希望它能长久如GitHub
 
@@ -14,7 +14,7 @@ title: About
 
 
 
-# About Me
+## About Me
 
 - 很稀有的水瓶男
 - 不爱二次元爱运动的信息安全小咸鱼
@@ -23,7 +23,7 @@ title: About
 
 
 
-# Contact Me
+## Contact Me
 
 - Email : zhyjc6$qq.com
 
