@@ -1,0 +1,767 @@
+## 1. 什么是包管理器？
+
+包管理器又称**软件包管理系统**，它是在电脑中自动安装、配制、卸载和升级[软件包](https://baike.baidu.com/item/软件包)的工具组合，在各种[系统软件](https://baike.baidu.com/item/系统软件)和[应用软件](https://baike.baidu.com/item/应用软件)的安装管理中均有广泛应用。
+
+在Linux发行版中，几乎每一个发行版都有自己的包管理器。常见的有：
+
+- Debian的[dpkg](https://baike.baidu.com/item/dpkg)以及它的
+
+  - 前端[apt](https://baike.baidu.com/item/apt/20109246#viewPageContent)（使用于[Debian](https://baike.baidu.com/item/Debian)、[Ubuntu](https://baike.baidu.com/item/Ubuntu)）。
+
+  
+  
+
+- Red Hat的[RPM包管理器](https://baike.baidu.com/item/RPM/3794648)以及它的
+
+  - 前端[dnf](https://baike.baidu.com/item/dnf)（使用于[Fedora](https://baike.baidu.com/item/Fedora)）、
+  - 前端[yum](https://baike.baidu.com/item/yum)（使用于[Red Hat Enterprise Linux](https://baike.baidu.com/item/Red Hat Enterprise Linux)）、
+  - 前端[ZYpp](https://baike.baidu.com/item/ZYpp)（使用于[openSUSE](https://baike.baidu.com/item/openSUSE)）、
+  - 前端[urpmi](https://baike.baidu.com/item/urpmi)（使用于[Mandriva Linux](https://baike.baidu.com/item/Mandriva Linux)、[Mageia](https://baike.baidu.com/item/Mageia)）等。
+
+
+
+- 其他包管理器有
+  - [ArchLinux](https://baike.baidu.com/item/ArchLinux)中使用的[Pacman](https://baike.baidu.com/item/Pacman)、
+  - [Gentoo](https://baike.baidu.com/item/Gentoo)使用的基于源代码的[Portage](https://baike.baidu.com/item/Portage)、
+  - Mac系统下的Homebrew等。
+
+
+
+使用包管理器将大大简化在Linux发行版中安装软件的过程。
+
+#### 1.1 有了包管理器为什么还要有其前端工具？
+
+包管理器如**RPM**与**DPKG**只能做到检查相依性，在安装或移除时告知相依性的不满足，接下来就需要用户自行去找出所需的组件来安装。 这样非常不方便，为了实现可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装，前端工具如 **APT**及**YUM**就诞生了！
+
+
+## 2. 常见的包管理器
+
+### 2.1 dpkg
+
+“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。软件都是以deb结尾的编译好的二进制包。
+
+所有源自“Debian”的“Linux ”发行版都使用 “dpkg”，例如 “Ubuntu”、“Knoppix ”等。
+
+
+
+#### 常用命令
+
+```
+1）安装软件
+命令：dpkg -i <.deb file name>
+示例：dpkg -i avg71flm_r28-1_i386.deb
+
+2）安装一个目录下面所有的软件包
+命令：dpkg -R
+示例：dpkg -R /usr/local/src
+
+3）释放软件包，但是不进行配置
+命令：dpkg –-unpack package_file 如果和-R一起使用，参数可以是一个目录
+示例：dpkg –-unpack avg71flm_r28-1_i386.deb
+
+4）重新配置和释放软件包
+命令：dpkg –configure package_file
+如果和-a一起使用，将配置所有没有配置的软件包
+示例：dpkg –configure avg71flm_r28-1_i386.deb
+
+5）删除软件包（保留其配置信息）
+命令：dpkg -r
+示例：dpkg -r avg71flm
+
+6）替代软件包的信息
+命令：dpkg –update-avail
+
+7）合并软件包信息
+dpkg –merge-avail
+
+8）从软件包里面读取软件的信息
+命令：dpkg -A package_file
+
+9）删除一个包（包括配置信息）
+命令：dpkg -P
+
+10）丢失所有的Uninstall的软件包信息
+命令：dpkg –forget-old-unavail
+
+11）删除软件包的Avaliable信息
+命令：dpkg –clear-avail
+
+12）查找只有部分安装的软件包信息
+命令：dpkg -C
+
+13）比较同一个包的不同版本之间的差别
+命令：dpkg –compare-versions ver1 op ver2
+
+14）显示帮助信息
+命令：dpkg –help
+
+15）显示dpkg的Licence
+命令：dpkg –licence (or) dpkg –license
+
+16）显示dpkg的版本号
+命令：dpkg –version
+
+17）建立一个deb文件
+命令：dpkg -b directory [filename]
+
+18）显示一个Deb文件的目录
+命令：dpkg -c filename
+
+19）显示一个Deb的说明
+命令：dpkg -I filename [control-file]
+
+20）搜索Deb包
+命令：dpkg -l package-name-pattern
+示例：dpkg -I vim
+
+21）显示所有已经安装的Deb包，同时显示版本号以及简短说明
+命令：dpkg -l
+
+22）报告指定包的状态信息
+命令：dpkg -s package-name
+示例：dpkg -s ssh
+
+23）显示一个包安装到系统里面的文件目录信息
+命令：dpkg -L package-Name
+示例：dpkg -L apache2
+
+24）搜索指定包里面的文件（模糊查询）
+命令：dpkg -S filename-search-pattern
+
+25）显示包的具体信息
+命令：dpkg -p package-name
+示例：dpkg -p cacti
+```
+
+
+
+
+
+### 2.2 apt
+
+Advanced Packaging Tool（apt）是Linux下的一款安装包[管理工具](https://baike.baidu.com/item/管理工具)。
+
+APT由几个名字以“apt-”打头的程序组成。[apt-get](https://baike.baidu.com/item/apt-get)、apt-cache 和apt-cdrom是处理软件包的命令行工具。
+
+#### 常用命令
+
+```
+apt-cache search package #搜索包
+apt-cache show package #获取包的相关信息，如说明、大小、版本等
+apt-cache depends package #了解使用依赖
+apt-cache rdepends package #查看该包被哪些包依赖
+apt-get source package #下载该包的源代码
+sudo apt-get install package #安装包
+sudo apt-get install package=version #安装指定版本的包
+sudo apt-get install package --reinstall #重新安装包
+sudo apt-get -f install #修复安装, "-f = --fix-missing"
+sudo apt-get remove package #删除包
+sudo apt-get remove package --purge #删除包，包括删除配置文件等
+sudo apt-get update #更新apt软件源信息
+sudo apt-get upgrade #更新已安装的包
+sudo apt-get dist-upgrade #升级系统
+sudo apt-get dselect-upgrade #使用dselect升级
+sudo apt-get build-dep package #安装相关的编译环境
+sudo apt-get clean && sudo apt-get autoclean #清理无用的包
+sudo apt-get check #检查是否有损坏的依赖
+```
+
+
+
+
+
+### 2.3 rpm
+
+**RPM包管理员**（简称**RPM**，全称为**The RPM Package Manager**或**Redhat Package Manager**）是在Linux下广泛使用的软件包管理器。
+
+**使用RPM的发行版**
+
+- [Fedora](https://baike.baidu.com/item/Fedora)和[Red Hat Enterprise Linux](https://baike.baidu.com/item/Red Hat Enterprise Linux)
+- [openSUSE](https://baike.baidu.com/item/openSUSE)和SUSE Linux Enterprise
+- [Mandriva Linux](https://baike.baidu.com/item/Mandriva Linux)和[Mageia](https://baike.baidu.com/item/Mageia)
+- [PCLinuxOS](https://baike.baidu.com/item/PCLinuxOS)
+
+RPM软件包分为二进制包（Binary）、源代码包（Source）和Delta包三种。二进制包可以直接安装在计算机中，而源代码包将会由RPM自动编译、安装。源代码包经常以src.rpm作为[后缀名](https://baike.baidu.com/item/后缀名)。
+
+RPM仅适用于安装用RPM来打包的软件，目前是[GNU/Linux](https://baike.baidu.com/item/GNU%2FLinux)下软件包资源最丰富的软件包类型之一。
+
+
+
+#### rpm的常用命令
+
+```
+1）安装软件包
+[root@localhost ~]# rpm-ivh PACKAGE_NAME-VERSION.rpm
+
+2）测试安装软件包，不做真实的安装
+[root@localhost ~]# rpm-ivh--test PACKAGE_NAME-VERSION.rpm
+
+3）安装软件包，并重新定义安装路径
+[root@localhost ~]# rpm-ivh--relocate /=/usr/local/PACKAGE_NAME PACKAGE_NAME-VERSION.rpm
+
+4）强行安装软件包，忽略依赖关系
+[root@localhost ~]# rpm-ivh PACKAGE_NAME-VERSION.rpm--force--nodeps
+
+5）升级软件包
+[root@localhost ~]# rpm-Uvh PACKAGE_NAME-VERSION.rpm
+
+6）强行升级软件包，忽略依赖关系
+[root@localhost ~]# rpm-Uvh PACKAGE_NAME-VERSION.rpm--force--nodeps
+
+7）删除软件包，并忽略依赖关系
+[root@localhost ~]# rpm-e PACKAGE_NAME--nodeps #只是包名，不需要跟版本号
+
+8）导入签名
+[root@localhost ~]# rpm--import RPM-GPG-KEY
+
+9）查询某个包是否已经安装
+[root@localhost ~]# rpm-q PACKAGE_NAME
+
+10）查询系统中所有已安装的包
+[root@localhost ~]# rpm-qa
+
+11）查询某个文件属于哪个包
+[root@localhost ~]# rpm-qf /etc/auto.misc
+
+12）查询某个已安装软件所包含的所有文件
+[root@localhost ~]# rpm-ql PACKAGE_NAME
+
+13）查询某个包的依赖关系
+[root@localhost ~]# rpm-qpR PACKAGE_NAME-VERSION.rpm
+
+14）查询某个包的信息
+[root@localhost ~]# rpm-qpi PACKAGE_NAME-VERSION.rpm
+
+15）删除软件包
+[root@localhost ~]# rpm-e PACKAGE_NAME
+```
+
+
+
+### 2.4 yum
+
+yum是一个用于管理rpm包的后台程序，用python写成，可以非常方便的解决rpm的依赖关系。在建立好yum服务器后，yum客户端可以通过 http、ftp方式获得软件包，并使用方便的命令直接管理、更新所有的rpm包，甚至包括kernel的更新。
+
+#### yum的常用命令
+
+```
+1.安装yum包：
+$ yum install PACKAGE_NAME
+
+2.删除yum包：
+$ yum remove PACKAGE_NAME
+
+3.重新安装一个yum包：
+$ yum reinstall PACKAGE_NAME
+
+4.搜索yum包：
+$ yum search PACKAGE_NAME
+
+5.显示yum包的信息：
+$ yum info PACKAGE_NAME
+
+6.更新安装的yum包：
+$ yum update
+
+7.更新具体的yum包：
+$ yum update PACKAGE_NAME
+
+8.显示yum历史：
+$ yum history
+
+9.显示已启用的yum存储库的列表：
+$ yum repolist
+
+10.找出哪个yum包提供了一个特定的文件（例如：/usr/bin/nc)）：
+$ yum whatprovides "*bin/nc"
+
+11.清除yum缓存：
+$ yum clean all
+```
+
+**查询相关**
+
+```
+1.使用YUM查找软件包
+命令：yum search ~
+2.列出所有可安装的软件包
+命令：yum list
+3.列出所有可更新的软件包
+命令：yum list updates
+4.列出所有已安装的软件包
+命令：yum list installed
+5.列出所有已安装但不在Yum Repository內的软件包
+命令：yum list extras
+6.列出所指定软件包
+命令：yum list ～
+7.使用YUM获取软件包信息
+命令：yum info ～
+8.列出所有软件包的信息
+命令：yum info
+9.列出所有可更新的软件包信息
+命令：yum info updates
+10.列出所有已安裝的软件包信息
+命令：yum info installed
+11.列出所有已安裝但不在Yum Repository內的软件包信息
+命令：yum info extras
+12.列出软件包提供哪些文件
+命令：yum provides~
+
+```
+
+
+
+### 2.5 dnf
+
+**DNF** 是新一代的rpm软件包管理器。他首先出现在 Fedora 18 这个发行版中。而最近，它取代了yum，正式成为 Fedora 22 的包管理器。
+
+DNF包管理器克服了YUM包管理器的一些瓶颈，提升了包括用户体验，内存占用，依赖分析，运行速度等多方面的内容。DNF使用 RPM, libsolv 和 hawkey 库进行包管理操作。尽管它没有预装在 CentOS 和 RHEL 7 中，但你可以在使用 YUM 的同时使用 DNF 。
+
+
+
+#### dnf的常用命令
+
+```
+1. 查看 DNF 包管理器版本
+# dnf –version
+
+2.查看系统中可用的 DNF 软件库
+# dnf repolist
+
+3.查看系统中可用和不可用的所有的 DNF 软件库
+# dnf repolist all
+
+4.列出所有 RPM 包
+# dnf list
+
+5.列出所有安装了的 RPM 包
+# dnf list installed
+
+6.列出所有可供安装的 RPM 包
+# dnf list available
+
+7.搜索软件库中的 RPM 包
+# dnf search nano
+
+8.查找某一文件的提供者
+# dnf provides /bin/bash
+
+9.查看软件包详情
+# dnf info nano
+
+10.安装软件包
+# dnf install nano
+
+11.升级软件包
+# dnf update systemd
+
+12.检查系统软件包的更新
+# dnf check-update
+
+13.升级所有系统软件包
+# dnf update 或 # dnf upgrade
+
+14.删除软件包
+# dnf remove nano 或 # dnf erase nano
+
+15.删除无用孤立的软件包
+# dnf autoremove
+
+16.删除缓存的无用软件包
+# dnf clean all
+
+17.获取有关某条命令的使用帮助
+# dnf help clean
+
+18.查看所有的 DNF 命令及其用途
+# dnf help
+
+19.查看 DNF 命令的执行历史
+# dnf history
+
+20.查看所有的软件包组
+# dnf grouplist
+
+21.安装一个软件包组
+# dnf groupinstall ‘Educational Software’
+
+22.升级一个软件包组中的软件包
+# dnf groupupdate ‘Educational Software’
+
+23.删除一个软件包组
+# dnf groupremove ‘Educational Software’
+
+24.从特定的软件包库安装特定的软件
+# dnf –enablerepo=epel install phpmyadmin
+
+25.更新软件包到最新的稳定发行版
+# dnf distro-sync
+
+26.重新安装特定软件包
+# dnf reinstall nano
+
+27.回滚某个特定软件的版本
+# dnf downgrade acpid
+```
+
+
+
+### 2.6 zypp
+
+ZYpp（或称**libzypp**) 是一个软件包管理引擎，通常在[openSUSE](https://baike.baidu.com/item/openSUSE)/[SUSE](https://baike.baidu.com/item/SUSE)以[YaST](https://baike.baidu.com/item/YaST)、Zypper或[PackageKit](https://baike.baidu.com/item/PackageKit)为前端使用。
+
+
+
+**zyppd的常用命令**
+
+```
+1. 安装包
+语法： # zypper install 示例：安装Mozilla firefox
+[root@linuxprobe ~]# zypper install MozillaFirefox
+
+2. 安装源码包
+语法：# zypper source-install 示例：从库中安装 apache
+[root@linuxprobe ~]# zypper source-install apache2-mod_nss
+
+3. 更新包
+更新某一软件包： # zypper update 更新所有软件包： # zypper update
+查看所有可用的更新列表：# zypper list-updates
+
+4. 删除包
+语法：# zypper remove 示例：移除Mozilla Firefox
+[root@linuxprobe ~]# zypper remove MozillaFirefox
+
+5. 查找包
+语法：# zypper search 示例：查找所有usb开头的软件包
+[root@linuxprobe ~]# zypper search usb*
+
+6. 查看软件包详情
+语法： zypper info 示例：查看usbutils的信息
+[root@linuxprobe ~]# zypper info usbutils
+
+7. 打补丁
+查看所有可打补丁: zypper patches
+安装指定补丁：zypper patch
+
+8. 锁住包
+
+软件包被锁之后将不能被移除或升级，下面演示一下如何加锁
+1）加al选项锁住包文件“usbutils”, al 是 add lock的缩写
+[root@linuxprobe ~] # zypper al usbutils
+Specified lock has been successfully added.
+
+2) 加ll选项查看所有已被锁住的软件包, ll 是 List Locks的缩写
+[root@linuxprobe ~] # zypper ll
+# | Name            | Type    | Repository
+--+-----------------+---------+-----------
+1 | usbutils        | package | (any)
+
+9. 解锁包
+加rl选项解锁usbutils, rl 是 remove lock的缩写
+[root@linuxprobe ~] #  zypper rl usbutils
+
+10. 用zypper添加库
+语法：# zypper addrepo
+[root@linuxprobe ~] # zypper addrepo --check --refresh --name "Mozilla-repo" 
+
+11. 创建本地库
+我们可以使用zypper从本地目录中创建一个包含所有rpm文件的本地库
+语法： # zypper addrepo
+示例：创建一个名为Linuxprobe_Repo的本地目录，包含所有rpm文件
+[root@linuxprobe ~] # zypper addrepo /var/stormgt/dsminst Linuxprobe_Repo
+
+12. 查看库
+[root@linuxprobe ~] # zypper lr
+
+13. 在库中搜索包
+列出指定库Mozillarepo的所有软件包
+[root@linuxprobe ~] # zypper search --repo Mozillarepo
+
+14. 库重命名
+重命名库可以用 renamerepo 选项
+示例：将库"Linuxprobe_Repo"的名字改成"MyLinuxRepo"
+[root@linuxprobe ~] # zypper renamerepo Linuxprobe_Repo MyLinuxRepo
+
+15. 删除库
+用removerepo选项来移除库
+[root@linuxprobe ~] # zypper removerepo MyLinuxRepo
+
+16. 备份库
+用export选项可以备份一系列库文件
+[root@linuxprobe ~] # zypper lr --export /var/tmp/backup.repo
+
+17. 从备份文件中添加库
+[root@linuxprobe ~] # zypper addrepo /var/tmp/backup.rep
+
+18. 禁用/使用库
+示例： 用 modifyrepo 选项的 -d 参数来禁用Mozilla库
+[root@linuxprobe ~] # zypper modifyrepo -d Mozillarepo
+Repository 'Mozillarepo' has been successfully disabled.
+示例： 用 modifyrepo选项 -e 参数来允许使用Mozilla库
+[root@linuxprobe ~] # zypper modifyrepo -e Mozillarepo
+Repository 'Mozillarepo' has been successfully enabled.
+
+19. 刷新库
+示例： 刷新Mozilla库
+[root@linuxprobe ~] # zypper refresh Mozillarepo
+示例： 自动刷新指定库
+[root@linuxprobe ~] # zypper modifyrepo --refresh Linuxprobe_Repo
+Autorefresh has been enabled for repository 'Linuxprobe_Repo'.
+```
+
+
+
+### 2.7 urpmi
+
+> urpmi是Mageia/MandrivaLinux及其派生发布版的软件包管理系统，用于安装、移除、升级和查询本机或远程（即提供软件包的服务器）的软件包。它解决了RPM包管理员容易让用户经常遇到相依性地狱的问题。它可以从官方或非官方的来源获得软件包（非官方来源如企鹅解放阵线）。它有一个图形前端：Rpmdrake。
+> 除了被MandrivaLinux所使用外，它也被用在MageiaLinux（一个基于MandrivaLinux的派生版本），以及ROSALinux（同样是基于MandrivaLinux的分支）。
+
+
+
+**urpmi系列命令**
+
+```
+urpmi  安装或升级
+urpme  删除
+urpmq  软件包查找
+urpmf  文件名查找
+urpmi.addmedia 添加源
+urpmi.removemedia  删除源
+urpmi.update 更新 (升级)
+urpmi.update -a 查看所有升级包
+urpmi --auto --auto-select 自动升级
+urmq --list        列出所有软件包
+urpmq --list-media  列出软件源的media
+urpmq -d 输出某软件包的依赖信息
+urpmq -f 输出某软件包的名字、版本、所属架构
+urpmq -i 安装，相当于urpmi
+urpmq -y yword> 查找包含某关键字的软件包(或者-a)
+urpmf   按某RPM包的准确名字查找
+
+主要的 urpmi 配置文件:
+/etc/urpmi/urpmi.cfg   软件源信息
+/etc/urpmi/skip.list  非自动升级的软件包列表
+/etc/urpmi/inst.list  需安装而非升级的软件包列表
+/var/lib/urpmi/list.*  库中所有软件包列表
+/var/lib/urpmi/hdlist.* 库中所有软件包的headers
+/var/lib/urpmi/synthesis.hdlist.*  软件包的依赖信息
+```
+
+
+
+
+
+
+
+
+
+## 1. 简介
+
+> 大多数现代类 Unix 操作系统都提供了一个集中的软件包管理机制，以帮助用户搜索、安装和管理软件。而软件通常以包的形式存储在仓库（repository）中，对软件包的使用和管理被称为包管理。而 Linux 包的基本组成部分通常有：共享库、应用程序、服务和文档。
+>
+> 在GNU/Linux(以下简称Linux)操作系统中，RPM和DPKG为最常见的两类软件包管理工具，他们分别应用于基于RPM软件包的Linux发行版本和DEB软件包的Linux发行版本。软件包管理工具的作用是提供在操作系统中安装，升级，卸载需要的软件的方法，并提供对系统中所有软件状态信息的查询。
+>
+> **什么是程序包管理器：**
+> 将编译好的应用程序的各个组成文件打包称一个或几个程序包文件，从而更方便地实现程序包的安装、升级、卸载和查询等管理操作。主要包含两个部分，首先是程序包的组成清单，这是每个包独有的，包含文件清单，安装或卸载时运行的脚本；其次是公共的数据库，主要有程序包的名称及版本，依赖关系，功能说明和安装生成的各文件的文件路径及校验码信息。
+>
+> ### 
+>
+> RPM（全称为RedhatPackage Manager），最早由RedHat公司制定实施，随后被GNU开源操作系统接受并成为很多Linux系统(RHEL)的既定软件标准。
+>
+> DEB是基于Debian操作系统(UBUNTU)的DEB软件包管理工具－DPKG（全称为Debian Package）,功能方面与 RPM 相似。
+>
+> ### RPM
+>
+> 一个RPM包包含了已压缩的软件文件集以及该软件的内容信息（在头文件中保存），通常表现为以.rpm扩展名结尾的文件，例如package.rpm。对其操作，需要使用rpm\ yum命令。
+>
+> rpm管理器有个弊端就是不能自动解决程序包依赖关系的问题
+>
+> 
+>
+> ### YUM
+>
+> YUM（全称为 Yellow dog Updater, Modified）
+>
+> yum命令是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。
+
+> yum的repository俗称yum仓库(yum repo),这个仓库里面存储了很多rpm包以及存放于特定
+> repodata目录下的包的相关元数据文件。既然yum访问yum仓库的模式是C/S架构，所以就必然有个yum客户端和yum服务端的概念。
+
+yum客户端
+
+```
+配置文件：
+    /etc/yum.conf：为所有仓库提供公共配置
+    /etc/yum.repos.d/*.repo：为仓库的指向提供配置
+
+yum仓库指向的配置文件：
+[repositoryID]    这个表示仓库的id表示，不同的yum仓库配置不能相同；
+name=Some name for this repository    这个是仓库的名字；
+baseurl=url://path/to/repository/   这个是访问真正的yum服务端的url指向；
+enabled={1|0}   仓库是否启用，1表示启用(默认值)，0表示未启用；
+gpgcheck={1|0}   是否要对程序包数据的来源合法性和数据完整性做校验；，1表示检查，0表示不检查；
+gpgkey=URL     指定GPG密钥文件的访问路径，可由仓库提供；；(如果gpgcheck启用，这里就要指向)
+enablegroups={1|0}  是否允许以组的方式管理仓库；
+failovermethod={roundrobin|priority}
+    默认为：roundrobin，意为随机挑选；
+    当baseurl同时指向多个仓库路径时，可指定以什么方式选择url去访问仓库，以及当某一路径访问
+失败时，可指定如何再选择路径；roundrobin是随机挑选路径访问，priority是自上而下选择路径访
+问；
+cost=开销；开销越小，该仓库url更优；默认值为1000
+```
+
+yum服务端(yum仓库)
+
+通过几张图来简要说明。
+
+![yum-1](C:%5CUsers%5C24538%5CDesktop%5CTemp%5Cimg%5Cyum-1.png)
+
+
+
+
+
+
+
+
+
+
+
+> ### APT
+>
+> APT（全称为AdvancedPackaging Tools）与 YUM对应，它最早被设计成DPKG的前端软件，现在通过apt-rpm也支持rpm管理。APT的主要包管理工具为APT-GET，通过此工具可满足和上述YUM相似的功能要求。
+>
+> Alien工具可以将RPM软件包转换成DEB软件包，或把DEB软件包转换成RPM软件包，以此适应兼容性的需要。注意首先请在系统中安装alien。
+
+
+
+1. 预先编译好的软件包
+2. 而rpm包的前端工具，例如yum，就很好的解决了软件包依赖的关系。不过yum是基于rpm来实现的，所以如果rpm使用有异常或者环境有问题，yum可能会使用异常。
+3.   yum：是rpm包管理器的前端管理工具
+     apt-get：deb包管理器的前端管理工具
+     zypper：suse上的rpm前端管理工具
+     dnf：[Fedora](https://www.linuxidc.com/topicnews.aspx?tid=5) 22+rpm包管理器前端管理工具
+4. 
+
+
+
+### 常见问题列表
+
+#### 可以手动强制不进行 RPM/DEB 的依赖性关系检查吗？
+
+- RPM
+
+  可以。使用 --nodeps 辅助参数，则安装过程将不理会依赖性关系限制，强制安装目标包，如：
+
+  ```
+  # rpm -i --nodeps package_a.rpm
+  ```
+
+- DEB
+
+  可以。使用— force-depends 辅助参数，如：
+
+  ```
+  $ sudo dpkg -i --force-depends package_a.deb
+  ```
+
+#### RPM/DPKG 支持远程安装吗？
+
+- RPM
+
+  是。 RPM 支持 HTTP 和 FTP 协议，如：
+
+  ```
+  # rpm -Uvh ftp://user:pass@ftpserver/package.rpm
+  ```
+
+- DPKG
+
+  最新的基于 DEB 包的系统中，远程安装通常被更先进的 APT 代替。
+
+#### 可以从 RPM/DPKG 中抽取个别文件吗？
+
+- RPM
+
+  是。可以使用 rpm2cpio 工具来提取文件：http://www.rpm.org/max-rpm/s1-rpm-miscellania-rpm2cpio.html
+
+- DPKG
+
+  是。可以使用 dpkg-deb 工具来提取文件：
+
+  ```
+  $ dpkg-deb --extract ibm_lotus_notes-8.5.i586.deb $dir( 目标目录 )
+  ```
+
+#### RPM/DPKG 提供包安装成功的验证机制吗？
+
+- RPM
+
+  是。可以使用 -V 参数进行验证。
+
+- DPKG
+
+  Debian 系统通常使用 debsums 工具参数进行验证。
+
+#### RPM/DPKG 提供包安全签名吗？
+
+- RPM
+
+  是。可以使用 --import 导入与软件同时发布的 GPG KEY, 接着使用 -K 命令来验证包的安全性，如：
+
+  ```
+  # rpm --import pub_ibm_lotus_notes.gpg # rpm -K ibm_lotus_notes-8.5.i586.rpm 返回信息 : ibm_lotus_notes-8.5.i586.rpm: (sha1) dsa sha1 md5 gpg OK
+  ```
+
+- DPKG
+
+  DPKG 不提供原生的 Key 验证机制。可以使用 debsigs 和 debsigs-verify，详情请见：http://man.ddvip.com/os/debiansecuring-howto/ch7.zh-cn.html
+
+#### 如果 RPM 的底层数据库损坏，RPM 还能使用吗？
+
+- RPM
+
+  如果底层数据库损坏，RPM 将无法正常使用。此时最常用的解决方法是重构数据库：
+
+  ```
+  # rm -f /var/lib/rpm/__* ; rpm -vv --rebuilddb
+  ```
+
+- RPM
+
+  DPKG 本身不提供底层数据库恢复机制。它的数据库以文件形式保存在 /var/lib/dpkg 目录中。及时地备份这个目录是最好的预防数据库损坏措施。
+
+#### 可以查询系统中已经安装的某个文件属于哪个 RPM 包吗？
+
+- RPM
+
+  可以。使用 -qf 参数 , 如在安装了 Notes8.5 的系统中：
+
+  ```
+  # rpm -qf /opt/ibm/lotus/notes/notes 返回信息 : Ibm_lotus_notes-8.5-20081211.1920
+  ```
+
+- DPKG
+
+  可以。使用— search 参数 , 如在安装了 Notes8.5 的系统中：
+
+  ```
+  $ dpkg --search /opt/ibm/lotus/notes/notes 返回信息 : ibm-lotus-notes: /opt/ibm/lotus/notes/notes
+  ```
+
+#### 可以查询 RPM 包的安装时间吗？
+
+- RPM
+
+  可以。可使用 --last 查询。如：
+
+  ```
+  rpm -qa --last 返回信息 : 系统中所有软件的安装时间。
+  ```
+
+- DPKG
+
+  DPKG 不提供直接的查询参数，但是可以用过查询 dpkg 的日志文件实现这个功能。如：
+
+  ```
+  cat /var/log/dpkg.log | grep "\ install\ "
+  ```
