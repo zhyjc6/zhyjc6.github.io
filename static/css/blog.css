@@ -218,6 +218,7 @@ body::-webkit-scrollbar {
 .footer {
   margin-top: 20px;
   margin-bottom: 4px;
+  text-align: center;
   font-size: 0;
 }
 .footer > * {
