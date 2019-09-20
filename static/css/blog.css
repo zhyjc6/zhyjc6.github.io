@@ -10,7 +10,7 @@ body {
 .btn-audio{
 	margin: 90px auto;
 	width: 186px;
-	height: 186px;
+	height: 86px;
 	background:url(images/voice_stop.png) no-repeat center bottom;
 	background-size:cover;
 }
