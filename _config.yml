@@ -23,13 +23,13 @@ bmobRestApiKey: 6f1419c800083315432f2df7dcb503d4
 
 # 域名配置
 # baseUrl配置,如果网站部署在根目录下的目录中，请设置为 /目录名
-domainUrl: 'https://zhyjc6.github.io'
+domainUrl: 'https://zhyjc6.github.io/backMusic.html'
 baseUrl: ''
 
 # 菜单
 menu:
   - title: Home
-    url: /backMusic.html
+    url: /index.html
   - title: Categories
     url: /pages/categories.html
   - title: Search
