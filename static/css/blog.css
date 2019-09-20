@@ -3,8 +3,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei';
-  background-image: url('static/readme/mobile.jpg');
-  background-size: 100% auto;
+  /*background: #ffffff;*/
+  background-image: url(static\readme\pc.jpg);
   scroll-behavior: smooth;
 }
 ul,
@@ -219,7 +219,6 @@ body::-webkit-scrollbar {
 .footer {
   margin-top: 20px;
   margin-bottom: 4px;
-  text-align: center;
   font-size: 0;
 }
 .footer > * {
