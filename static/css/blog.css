@@ -7,13 +7,6 @@ body {
   background-size:cover
   scroll-behavior: smooth;
 }
-.btn-audio{
-	margin: 90px auto;
-	width: 186px;
-	height: 86px;
-	background:url(images/voice_stop.png) no-repeat center bottom;
-	background-size:cover;
-}
 
 ul,
 li {
@@ -78,6 +71,17 @@ body::-webkit-scrollbar {
   user-select: none;
   -webkit-user-select: none;
 }
+
+
+.btn-audio{
+	margin: 90px auto;
+	width: 186px;
+	height: 86px;
+	background: no-repeat center bottom;
+}
+
+
+
 .animation-fade-up {
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
