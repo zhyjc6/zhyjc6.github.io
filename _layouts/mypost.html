@@ -4,6 +4,15 @@
 {%- assign buildAt = site.time | date: "%Y%m%d%H%M%S" -%}
 <!DOCTYPE html>
 <html>
+
+<!-- 网易云的iframe需要做些调整，调整如下 -->
+<iframe
+  src="//music.163.com/outchain/player?type=2&id=28445796&auto=0&height=66"
+  frameborder="0"
+  width="100%"
+  height="86px"
+></iframe>
+
 {% include head.html %}
 <body ondragstart="return false;">
 {% include header.html %}
