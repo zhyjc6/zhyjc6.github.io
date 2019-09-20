@@ -29,7 +29,7 @@ baseUrl: ''
 # 菜单
 menu:
   - title: Home
-    url: /backMusic.html
+    url: 
   - title: Categories
     url: /pages/categories.html
   - title: Search

@@ -7,6 +7,14 @@ body {
   background-size:cover
   scroll-behavior: smooth;
 }
+.btn-audio{
+	margin: 90px auto;
+	width: 186px;
+	height: 186px;
+	background:url(images/voice_stop.png) no-repeat center bottom;
+	background-size:cover;
+}
+
 ul,
 li {
   list-style: none;
