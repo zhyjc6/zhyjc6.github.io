@@ -74,10 +74,9 @@ body::-webkit-scrollbar {
 
 
 .btn-audio{
-	margin: 90px auto;
-	width: 186px;
-	height: 86px;
-	background: no-repeat center bottom;
+	margin: 0px auto;
+	width: 100px;
+	height: 20px;
 }
 
 
