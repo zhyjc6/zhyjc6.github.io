@@ -1,8 +1,12 @@
 # 介绍
 
-找到的别人的一款 jekyll 主题模板，真的很清爽！（[GitHub 地址](https://github.com/TMaize/tmaize-blog)），简洁纯净，未引入任何框架，秒开页面，支持自适应，支持全文检索
+找到的别人的一款 jekyll 主题模板，真的很清爽！（[原GitHub 地址](https://github.com/TMaize/tmaize-blog)），简洁纯净，未引入任何框架，秒开页面，支持自适应，支持全文检索
 
-下面有具体的样式截图，或者你可以到原作者[TMaize Blog](http://blog.tmaize.net/)查看运行效果
+下面有具体的样式截图，或者你可以到原作者博客[TMaize Blog](http://blog.tmaize.net/)查看运行效果
+
+或者进入: [我的博客](**zhyjc6.github.io**)
+
+
 
 # 注意
 
