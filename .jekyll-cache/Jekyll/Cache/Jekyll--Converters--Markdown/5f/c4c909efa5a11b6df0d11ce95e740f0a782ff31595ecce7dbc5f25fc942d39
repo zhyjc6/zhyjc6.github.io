@@ -1,0 +1,326 @@
+I"�F<h2 id="什么是ctf">什么是CTF?</h2>
+
+<ul>
+  <li>CTF即Capture The Flag，意味夺旗。这个概念是从欧美传过来的，字面上是“夺取旗帜”，原本是西方的一种传统户外游戏，相当于我们的丢沙包或者跳大绳，后来“夺旗”的概念才引入信息安全攻防比赛。</li>
+  <li>
+    <p>现在的CTF比赛起源于1996年DEFCON全球黑客大会，是网络安全技术人员之间进行技术竞技的一种比赛形式。CTF赛事分为国内和国际，种类繁多，其中以DEFCON最为著名。DEFCON是目前全球最高技术水平和影响力的CTF竞赛，类似于CTF赛场中的“世界杯”。</p>
+  </li>
+  <li>
+    <p>CTF是一种信息安全团队竞赛，参赛团队通常以三人为限，三人优势互补、各司其职、各显神通。参赛团队之间通过进行攻防对抗、程序分析等形式，率先从主办方给出的比赛环境中得到一串具有一定格式的字符串或其他内容，并将其提交给主办方，从而夺得分数。而提交的内容我们就称之为“<strong>Flag</strong>”。</p>
+  </li>
+  <li>CTF还分为线上赛和线下赛。参与线上赛多半是各种比赛的初赛，参赛队员在任何能联网的地方都能参与竞赛；线下赛多半就是决赛之类的重要比赛，参赛者需要动身前往比赛举办地（即使是在他国举办）现场作答。</li>
+  <li>各大公司为了提高知名度或者处于其他目的也会举办CTF比赛，比赛通常都有奖金，有的公司还提供入职offer（例如滴滴），不可谓不爽啊！</li>
+  <li>在CTF比赛结束后比赛举办方会要求参赛选手在一定的时限内提交解题思路（就是所谓的<strong>writeup</strong>），因为有的人的flag不是解出来的，而是从别人那里“窃取”的。</li>
+</ul>
+
+<h2 id="为什么要举办ctf">为什么要举办CTF?</h2>
+
+<ul>
+  <li>
+    <h5 id="安全人才缺乏是一个国际性问题而-ctf-是培养安全人才的重要手段">安全人才缺乏是一个国际性问题，而 CTF 是培养安全人才的重要手段。</h5>
+  </li>
+</ul>
+
+<blockquote>
+  <p>教育部高等学校信息安全专业教学指导委员会秘书长封化民曾说过：中国信息安全人才需求将以每年 1.5 万人的速度递增，到 2020 年相关人才需求将增长到 140 万。我还看到毕马威对英国大企业的调查显示：安全人才越来越供不应求，有 52% 的被调查者表示，甚至愿意雇佣有网络犯罪前科的人，因为人才供不应求。美国兰德公司发布的一份报告指出：美国高端信息安全人才存在短缺，尤其是在联邦政府内，这会对国家安全造成不利影响，建议联邦政府放宽雇用规则、投资信息安全教育。</p>
+</blockquote>
+
+<ul>
+  <li>
+    <h5 id="ctf-和现实安全技术工作的关系">CTF 和现实安全技术工作的关系</h5>
+  </li>
+</ul>
+
+<blockquote>
+  <p>打 CTF 是非常好的安全技术能力训练方式，优秀 CTF 选手在从事安全技术工作时也会有很大优势。不过大多数现实中的安全技术工作其实没有 CTF 中的问题那么困难，但会复杂得多。另外，打 CTF 的目标是得分，处理现实安全问题的时候要考虑更多因素，比如，解决问题的同时还要保持业务运行。</p>
+</blockquote>
+
+<h2 id="ctf的题型与竞赛模式">CTF的题型与竞赛模式</h2>
+
+<h3 id="题型">题型</h3>
+
+<ul>
+  <li>
+    <h4 id="reverse逆向">reverse（逆向）</h4>
+
+    <ul>
+      <li>题目涉及到软件逆向、破解技术等，要求有较强的反汇编、反编译功底。主要考查参赛选手的逆向分析能力。</li>
+      <li>所需知识：汇编语言、加密与解密、常见反编译工具等</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="pwn二进制">Pwn（二进制）</h4>
+
+    <ul>
+      <li>Pwn 在黑客俚语中代表着攻破，获取权限，在 CTF 比赛中它代表着溢出类的题目，其中常见类型溢出漏洞有整数溢出、栈溢出、堆溢出等。主要考查参赛选手对漏洞的利用能力。</li>
+      <li>所需知识：C，OD+IDA，数据结构，操作系统等</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="web">Web</h4>
+
+    <ul>
+      <li>Web 是 CTF 的主要题型，题目涉及到许多常见的 Web 漏洞，如 XSS、文件包含、代码执行、上传漏洞、SQL 注入等。也有一些简单的关于网络基础知识的考察，如返回包、TCP/IP、数据包内容和构造。可以说题目环境比较接近真实环境。</li>
+      <li>所需知识：PHP、Python、TCP/IP、SQL等等</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="crypto">Crypto</h4>
+
+    <ul>
+      <li>题目考察各种加解密技术，包括古典加密技术、现代加密技术甚至出题者自创加密技术，以及一些常见编码解码，主要考查参赛选手密码学相关知识点。通常也会和其他题目相结合。</li>
+      <li>所需知识：矩阵、数论、密码学等</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="misc杂项">Misc（杂项）</h4>
+
+    <ul>
+      <li>Misc 即安全杂项，题目涉及隐写术、流量分析、电子取证、人肉搜索、数据分析、大数据统计等，覆盖面比较广，主要考查参赛选手的各种基础综合知识。</li>
+      <li>所需知识：常见隐写术工具、Wireshark 等流量审查工具、编码知识等</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="mobile">Mobile</h4>
+
+    <ul>
+      <li>主要分为 Android 和 iOS 两个平台，以 Android 逆向为主，破解 APK 并提交正确答案。</li>
+      <li>所需知识：Java，Android 开发，常见工具等</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="竞赛模式">竞赛模式</h3>
+
+<ul>
+  <li>
+    <p>一、解题模式（Jeopardy）</p>
+
+    <ul>
+      <li>在解题模式CTF赛制中，参赛队伍可以通过互联网或者现场网络参与，这种模式的CTF竞赛与ACM编程竞赛、信息学奥赛比较类似，以解决网络安全技术挑战题目的分值和时间来排名，通常用于在线选拔赛。题目主要包含逆向、漏洞挖掘与利用、Web渗透、密码、取证、隐写、安全编程等类别。</li>
+      <li>这种模式的缺点是类似于“应试教育”，当前的趋势是注重出题难、出题偏，没有考虑实际，就跟奥数似的。而且这种模式只有攻击，却没有防守，而在企业中工作更多的还是考虑如何防护的问题，这个时候 AWD 攻防赛模式就应运而生了。</li>
+    </ul>
+  </li>
+  <li>
+    <p>二、攻防模式（Attack-Defense）</p>
+
+    <ul>
+      <li>在攻防模式CTF赛制中，参赛队伍在网络空间互相进行攻击和防守，挖掘网络服务漏洞并攻击对手服务来得分，修补自身服务漏洞进行防御来避免丢分。攻防模式CTF赛制可以实时通过得分反映出比赛情况，最终也以得分直接分出胜负，是一种竞争激烈，具有很强观赏性和高度透明性的网络安全赛制。在这种赛制中，不仅仅是比参赛队员的智力和技术，也比体力（因为比赛一般都会持续48小时及以上），同时也比团队之间的分工配合与合作。</li>
+      <li>这种模式非常激烈，准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本。</li>
+    </ul>
+  </li>
+  <li>
+    <p>三、混合模式（Mix）</p>
+
+    <ul>
+      <li>结合了解题模式与攻防模式的CTF赛制，比如参赛队伍通过解题可以获取一些初始分数，然后通过攻防对抗进行得分增减的零和游戏，最终以得分高低分出胜负。采用混合模式CTF赛制的典型代表如iCTF国际CTF竞赛。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ctf常用术语及行规">CTF常用术语及行规</h2>
+
+<h3 id="术语">术语</h3>
+
+<ul>
+  <li>
+    <p>一血</p>
+
+    <p>指在 CTF及相关衍生比赛最先解出一道新赛题的“动作”。</p>
+  </li>
+  <li>
+    <p>赛棍</p>
+
+    <p>业内人士把经常参加 CTF 大赛的选手称为“赛棍”，此称呼无褒贬，纯属调侃。</p>
+  </li>
+  <li>
+    <p>搅屎棍</p>
+
+    <p>指在参赛过程中对平台发起攻击的的选手，这种攻击通常属于搞破坏。为此，在 CTF等赛事的比赛过程中，要有维护人员“震场子”，及时发现“搅屎棍”的蛛丝马迹，维护平台稳定和赛事的正常进行。</p>
+  </li>
+</ul>
+
+<h3 id="行规">行规</h3>
+
+<ul>
+  <li>
+    <p>请外援</p>
+
+    <p>在 CTF 比赛中，有些比赛不限制战队选手数量，如DEFCON CTF；有些比赛会限制赛队选手人数。而一般 CTF 比赛时长从 24 小时—36小时不等，几个“老司机”在短时间内也无法解出一些很难的赛题，因此，在线上比赛时，有人请外援也无法知道。线下比赛时，有时选手会传送题目请外援。这种被有些主办方默许，还有一些主办方当然是拒绝的。</p>
+  </li>
+  <li>
+    <p>端茶倒水</p>
+
+    <p>如果对手实在很强，解出了自己所不能解答的题，你不需要像武林高手那样低头认输，只要说为对方“端茶倒水”“摇扇子”即可，“端茶倒水”即表示膜拜。</p>
+  </li>
+  <li>
+    <p>不眠夜</p>
+
+    <p>无论是 24 小时、48 小时，甚至挑战选手体力极限的 72 小时，在比赛中间的夜晚，一定是一个“继续参赛”的不眠夜。</p>
+  </li>
+</ul>
+
+<h2 id="国内外赛事">国内外赛事</h2>
+
+<h3 id="国际知名赛事">国际知名赛事</h3>
+
+<ul>
+  <li><a href="https://defcon.org/">DEFCON CTF</a>：CTF赛事中的“世界杯”</li>
+  <li><a href="https://ictf.cs.ucsb.edu/">UCSB iCTF</a>：来自UCSB的面向世界高校的CTF</li>
+  <li><a href="http://www.plaidctf.com/">Plaid CTF</a>：包揽多项赛事冠军的CMU的PPP团队举办的在线解题赛</li>
+  <li>Boston Key Party：近年来崛起的在线解题赛</li>
+  <li><a href="http://www.codegate.org/">Codegate CTF</a>：韩国首尔“大奖赛”，冠军奖金3000万韩元</li>
+  <li><a href="http://secuinside.com">Secuinside CTF</a>：韩国首尔“大奖赛”，冠军奖金3000万韩元</li>
+  <li>XXC3 CTF：欧洲历史最悠久CCC黑客大会举办的CTF</li>
+  <li>SIGINT CTF：德国CCCAC协会另一场解题模式竞赛</li>
+  <li><a href="https://hack.lu/ctf/">Hack.lu CTF</a>：卢森堡黑客会议同期举办的CTF</li>
+  <li>EBCTF：荷兰老牌强队Eindbazen组织的在线解题赛</li>
+  <li>Ghost in the Shellcode：由Marauders和Men in Black Hats共同组织的在线解题赛</li>
+  <li><a href="https://rwthctf.heipei.io">RwthCTF</a>：由德国0ldEur0pe组织的在线攻防赛</li>
+  <li><a href="https://ructf.org">RuCTF</a>：由俄罗斯Hackerdom组织，解题模式资格赛面向全球参赛，解题攻防混合模式的决赛面向俄罗斯队伍的国家级竞赛</li>
+  <li><a href="https://ructfe.org/">RuCTFe</a>：由俄罗斯Hackerdom组织面向全球参赛队伍的在线攻防赛</li>
+  <li><a href="https://www.phdays.com">PHD CTF</a>：俄罗斯Positive Hacking Day会议同期举办的CTF</li>
+</ul>
+
+<h3 id="国内知名ctf赛事">国内知名CTF赛事</h3>
+
+<ul>
+  <li>
+    <p><a href="https://www.xctf.org.cn/">XCTF全国联赛</a></p>
+
+    <p>中国网络空间安全协会竞评演练工作组主办、南京赛宁承办的全国性网络安全赛事平台，2014-2015赛季五站选拔赛分别由清华、上交、浙大、杭电和成信技术团队组织（包括杭电HCTF、成信SCTF、清华BCTF、上交0CTF和浙大ACTF），XCTF联赛总决赛由蓝莲花战队组织。XCTF联赛是国内最权威、最高技术水平与最大影响力的网络安全CTF赛事平台。</p>
+  </li>
+  <li>
+    <p>AliCTF</p>
+
+    <p>由阿里巴巴公司组织，面向在校学生的CTF竞赛，冠军奖金10万元加BlackHat全程费用。</p>
+  </li>
+  <li>
+    <p>XDCTF</p>
+
+    <p>2015年之前由西安电子科技大学信息安全协会与西安电子科技大学组织的CTF竞赛，其特点是偏向于渗透实战经验。2016年之后由西安电子科技大学组织举办。</p>
+  </li>
+  <li>
+    <p><a href="https://www.xctf.org.cn/ctfs/detail/126/">HCTF</a></p>
+
+    <p>由杭州电子科技大学信息安全协会承办组织的CTF</p>
+
+    <p>杭州电子科技大学信息安全协会由杭州电子科技大学通信工程学院组织建立，协会已有七年历史，曾经出征DEFCON,BCTF等大型比赛并取得优异成绩，同时协会还有大量有影响力的软件作品。协会内部成员由热爱黑客技术和计算机技术的一些在校大学生组成，有多个研究方向，主要有渗透，逆向，内核，web等多个研究方向。至今已经成功举办6次CTF比赛。</p>
+  </li>
+  <li>
+    <p><a href="https://www.iscc-system.org/">ISCC</a></p>
+
+    <p>由北理工组织的传统网络安全竞赛，最近两年逐渐转向CTF赛制。</p>
+  </li>
+  <li>
+    <p><a href="https://www.xctf.org.cn/ctfs/detail/71/">LCTF</a></p>
+
+    <p>由L-Team战队组织的CTF竞赛。</p>
+  </li>
+  <li>
+    <p><a href="https://tctf.qq.com/">TCTF</a></p>
+
+    <p>TCTF由中国网络空间安全协会竞评演练工作委员会指导、腾讯安全发起、腾讯安全联合实验室主办，0ops战队和北京邮电大学协办的CTF竞赛</p>
+  </li>
+</ul>
+
+<p>　　</p>
+
+<ul>
+  <li>
+    <p>百度杯CTF夺旗大战</p>
+
+    <p>由<strong>百度安全应急响应中心</strong>和<strong>i春秋</strong>联合举办的CTF比赛，国内现今为止首次历时最长（半年）、频次最高的CTF大赛。赛题丰富且突破了技术和网络的限制。</p>
+  </li>
+</ul>
+
+<p>　</p>
+
+<ul>
+  <li>
+    <p><a href="http://www.ciscn.cn/">全国大学生信息安全竞赛创新实践能力赛线上赛</a></p>
+
+    <p>由<strong>教育部高等学校信息安全专业教学指导委员会主办</strong>，西安电子科技大学、永信至诚、国卫信安等承办;百度安全中心、阿里安全应急响应中心、腾讯安全平台方舟计划、360企业安全集团赞助支持的CTF竞赛，覆盖面广，质量级别最高，被参赛选手称作CTF的<strong>国赛</strong>。</p>
+  </li>
+</ul>
+
+<h2 id="开始ctf之路">开始CTF之路</h2>
+
+<h3 id="推荐资讯网站">推荐资讯网站</h3>
+
+<ol>
+  <li>
+    <h5 id="吾爱破解-httpswww52pojiecn-每隔一段时间会开放注册">吾爱破解 <a href="https://www.52pojie.cn/">https://www.52pojie.cn/</a> 每隔一段时间会开放注册</h5>
+  </li>
+  <li>
+    <h5 id="看雪论坛-httpswwwkanxuecom-比上面那个网站好看">看雪论坛 <a href="https://www.kanxue.com/">https://www.kanxue.com/</a> 比上面那个网站好看！！！</h5>
+  </li>
+  <li>
+    <h5 id="tools又称吐司-httpswwwt00lsnet-玩安全无吐司帐号门未入">tools（又称吐司 <a href="https://www.t00ls.net/">https://www.t00ls.net/</a> 玩安全无吐司帐号门未入</h5>
+  </li>
+  <li>
+    <h5 id="freebuf-httpswwwfreebufcom">freebuf <a href="https://www.freebuf.com/">https://www.freebuf.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="先知-httpsxzaliyuncom">先知 <a href="https://xz.aliyun.com/">https://xz.aliyun.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="嘶吼-httpswwwanquankecom">嘶吼 <a href="https://www.anquanke.com/">https://www.anquanke.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="安全客-httpswww4houcom">安全客 <a href="https://www.4hou.com/">https://www.4hou.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="nosec-httpsnosecorghomeindex">nosec <a href="https://nosec.org/home/index">https://nosec.org/home/index</a></h5>
+  </li>
+  <li>
+    <h5 id="secwiki-httpswwwsec-wikicom">secwiki <a href="https://www.sec-wiki.com/">https://www.sec-wiki.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="知道创宇-httpblogknownseccom-有技能表">知道创宇 <a href="http://blog.knownsec.com/">http://blog.knownsec.com/</a> 有技能表</h5>
+  </li>
+</ol>
+
+<h3 id="推荐训练平台">推荐训练平台</h3>
+
+<ol>
+  <li>
+    <h5 id="合天-httpwwwhetianlabcom">合天 http://www.hetianlab.com/<a href="http://www.hetianlab.com/"></a></h5>
+  </li>
+  <li>
+    <h5 id="bugku-httpsctfbugkucom--题目好久没更新的入门级">Bugku <a href="https://ctf.bugku.com/">https://ctf.bugku.com/</a>  题目好久没更新的，入门级</h5>
+  </li>
+  <li>
+    <h5 id="jarvis-oj-httpswwwjarvisojcom">Jarvis OJ <a href="https://www.jarvisoj.com/">https://www.jarvisoj.com/</a></h5>
+  </li>
+  <li>
+    <h5 id="攻防世界-httpsadworldxctforgcn-西电搞的">攻防世界 <a href="https://adworld.xctf.org.cn/">https://adworld.xctf.org.cn/</a> 西电搞的，</h5>
+  </li>
+  <li>
+    <h5 id="pwn专场-httpspwnablekrplayphp-感受pwn的痛苦吧">PWN专场 <a href="https://pwnable.kr/play.php">https://pwnable.kr/play.php</a> 感受pwn的痛苦吧</h5>
+  </li>
+  <li>
+    <h5 id="xctf社区-httpswwwxctforgcn">XCTF社区 <a href="https://www.xctf.org.cn/">https://www.xctf.org.cn/</a></h5>
+  </li>
+  <li>
+    <h5 id="爱春秋-httpswwwichunqiucom-线下线上题目复现">爱春秋 <a href="https://www.ichunqiu.com/">https://www.ichunqiu.com/</a> 线下线上题目复现</h5>
+  </li>
+  <li>
+    <h5 id="实验吧-httpwwwshiyanbarcom">实验吧 <a href="http://www.shiyanbar.com/">http://www.shiyanbar.com</a></h5>
+  </li>
+  <li>
+    <h5 id="网络安全实验室-httphackinglabcn">网络安全实验室 <a href="http://hackinglab.cn/">http://hackinglab.cn</a></h5>
+  </li>
+</ol>
+
+<blockquote>
+  <p>以上链接不分先后，不保证时效性</p>
+</blockquote>
+
+<h2 id="说点啥吧">说点啥吧</h2>
+
+<p>OK！以上是我花了大概半天时间整理的资料，仅仅是为了我对CTF有一个初步的比较全面的认识。我本人曾经短暂接触过CTF，大约个把月吧！试了一下web和逆向的坑。因为我学的是信息安全专业（我也算是一个“业内人士”哦），平时学的东西乱七八糟的，但是最终还是要回到安全。</p>
+
+<p>另外，这篇博客属于科普类博客，以后我还会不断更新的，因为科普一定要保证能正确地更好地科普。毕竟科普类文章说不定什么时候就被推翻了:happy::happy:</p>
+
+:ET

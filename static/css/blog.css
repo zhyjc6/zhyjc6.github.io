@@ -3,8 +3,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei';
-  background: url(bk1.jpg) no-repeat fixed;
-  background-size:cover
+  background: url(bk3.jpg) no-repeat fixed;
+  background-size: 100% 100%;     // 满屏  
   scroll-behavior: smooth;
 }
 
