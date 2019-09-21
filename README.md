@@ -4,7 +4,7 @@
 
 下面有具体的样式截图，或者你可以到原作者博客[TMaize Blog](http://blog.tmaize.net/)查看运行效果
 
-或者进入: [我的博客](**zhyjc6.github.io**)
+或者进入: [我的博客]([https://zhyjc6.github.io](https://zhyjc6.github.io/))
 
 
 
