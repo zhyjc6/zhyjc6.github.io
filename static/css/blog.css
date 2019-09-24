@@ -3,8 +3,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei';
+  background-color: #A0D4E5;
+  /*
   background: url(bk3.jpg) no-repeat fixed;
   background-size: 100% 100%;     // 满屏  
+  */
   scroll-behavior: smooth;
 }
 
