@@ -26,6 +26,9 @@ bmobRestApiKey: 6f1419c800083315432f2df7dcb503d4
 domainUrl: 'https://zhyjc6.github.io'
 baseUrl: ''
 
+# 吐个槽地址，会在chat页面中重定向到该地址
+tucaoUrl: https://support.qq.com/product/87134
+
 # 菜单
 menu:
   - title: Home
