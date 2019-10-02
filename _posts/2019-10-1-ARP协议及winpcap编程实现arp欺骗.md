@@ -768,7 +768,7 @@ void pktbuild(u_char *packet, int *smac, int *sip, int *dmac, int *dip)
 
 ### 九、资源包下载
 
-[Tool.zip](Tool.zip)(33.7MB)
+[Tool.zip](https://github.com/zhyjc6/zhyjc6-blog-data/blob/master/Tool.zip)(33.7MB)
 
 资源内包含以下内容：
 
