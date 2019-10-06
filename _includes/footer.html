@@ -1,11 +1,10 @@
 <footer class="footer select-one animation-fade-up">
   <span>Theme From</span>
-  <!-- 请保留 -->
   <a href="https://github.com/TMaize/tmaize-blog" target="_blank" >tmaize-blog</a>
-  <div id="moveUp" style="display: none"></div>
 </footer>
+<img id="moveUp" class="select-none" src="{{site.baseUrl}}/static/img/up.svg">
 <!-- 全局属性blog -->
-<script>window.blog={baseUrl:"{{site.baseUrl}}", buildAt:"{{buildAt}}", bmobApplicationId: "{{site.bmobApplicationId}}", bmobRestApiKey: "{{site.bmobRestApiKey}}"}</script>
+<script>window.blog={baseUrl:"{{site.baseUrl}}", buildAt:"{{buildAt}}"}</script>
 <!-- 引入页面中配置的JS -->
 {% for js in pageJS %}
 <script type="text/javascript" src="{{site.baseUrl}}/static/js/{{ js }}?t={{ buildAt }}"></script>
@@ -16,3 +15,4 @@
   {% include {{cp.file}} values=cp %}
   {% endif %}
 {% endfor %}
+
