@@ -24,17 +24,17 @@ tucaoUrl: https://support.qq.com/product/87134
 
 # 菜单
 menu:
-  - title: Home
+  - title: 主页
     url: /
-  - title: Categories
+  - title: 分类
     url: /pages/categories.html
-  - title: Search
+  - title: 搜索
     url: /pages/search.html
-  - title: Links
+  - title: 友链
     url: /pages/links.html
-  - title: Chat
+  - title: 留言
     url: /pages/chat.html
-  - title: About
+  - title: 关于
     url: /pages/about.html
 
 # 自定义插件,具体说明请看README文档
