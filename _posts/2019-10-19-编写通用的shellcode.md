@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: 一段shellcode的分析调试解释API地址的动态定位
-categories: [漏洞分析与利用]
+categories: [PWN]
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: shellcode基础知识
-categories: [漏洞分析与利用,科普]
+categories: [PWN,科普]
 ---
 
 
