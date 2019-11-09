@@ -48,6 +48,8 @@
   width: 100%;
   line-height: 1;
   padding: 10px 0;
+  border: 2px solid ;
+  border-radius: 8px;
 }
 .page-search #search-input::-webkit-input-placeholder {
   font-size: 14px;
