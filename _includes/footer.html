@@ -16,3 +16,20 @@
   {% endif %}
 {% endfor %}
 
+<!--调用tocbot生成文章目录-->
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
+<script>
+tocbot.init({
+  tocSelector: '#toc',
+  contentSelector: '.post',
+  headingSelector: 'h1, h2, h3, h4, h5, h6',
+  collapseDepth: 0,
+  scrollSmooth: true,
+  scrollSmoothDuration: 0,
+  headingsOffset: 1,
+  fixedSidebarOffset: 'auto',
+  orderedList: true,
+});
+</script>
+

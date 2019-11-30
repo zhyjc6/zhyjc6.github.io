@@ -51,10 +51,10 @@
   padding: 9px 9px 9px 15px;
 }
 
-.page-post a {
+.page-post a:not(#nav a) {
   color: #000000;
   margin: 0 2px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 3px solid #000000;
 }
 .page-post strong,
 .page-post b {
@@ -143,7 +143,7 @@
 .page-post .table-container table tbody tr:last-child {
   border-bottom: 0;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 800px) {
   .page-post {
     font-size: 13px;
   }
@@ -161,4 +161,16 @@
   .page-post .post > * {
     margin: 15px 0;
   }
+  #toc {
+    display: none;
+  }
+}
+#toc {
+  position: fixed;
+  left: 0px;
+  top: 10px;
+  max-width: 300px;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
 }
