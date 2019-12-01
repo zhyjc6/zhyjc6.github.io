@@ -188,16 +188,16 @@ body {
   padding: 3px 0;
   white-space: nowrap;
 }
-.footer {
-  padding: 15px 0;
-  font-size: 14px;
-  line-height: 1.5;
+footer {
+  border-top: 2px solid #DDDDDD;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  font-size: small;
   text-align: center;
 }
-.footer a {
+footer a {
   text-decoration: underline;
   color: #000000;
-  padding: 0 4px;
   white-space: nowrap;
 }
 #moveUp {
@@ -224,9 +224,6 @@ body {
   .header .menu a {
     margin: 0 4px;
     font-size: 14px;
-  }
-  .footer {
-    font-size: 13px;
   }
   #moveUp {
     right: 14px;

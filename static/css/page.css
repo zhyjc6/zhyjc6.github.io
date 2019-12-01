@@ -34,6 +34,8 @@
 .list-category div {
   padding: 8px 0px 8px 30px;
   border-bottom: solid 1px black;
+  border-left: solid 0.5px black;
+  border-right: solid 0.5px black;
   margin-bottom: 20px;
 }
 .list-category div a {
