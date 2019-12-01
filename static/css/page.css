@@ -32,14 +32,19 @@
   padding: 12px 0;
 }
 .list-category div {
-  padding: 8px 0 8px 10px;
+  padding: 8px 0px 8px 30px;
+  border-bottom: solid 1px black;
+  margin-bottom: 20px;
 }
 .list-category div a {
-  margin: 4px 6px;
+  display: inline-block;
+  margin-top: 10px;
+  height: auto;
+  width: 101px;
+  text-decoration: none;
   white-space: nowrap;
   font-size: 15px;
-  display: inline-block;
-  border-bottom: 1px solid #333333;
+  font-weight: bold;
 }
 .page-search #search-input {
   text-align: center;
@@ -48,7 +53,7 @@
   width: 100%;
   line-height: 1;
   padding: 10px 0;
-  border: 2px solid ;
+  border: 1px solid ;
   border-radius: 8px;
 }
 .page-search #search-input::-webkit-input-placeholder {

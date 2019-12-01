@@ -10,7 +10,7 @@ js: [blog.js]
 		<h2>所有分类</h2>
 		<div>
 			{% for category in site.categories %}
-			<a href="javascript:document.getElementById('{{ category[0] }}').scrollIntoView()">{{ category[0] }}</a>
+			<a href="javascript:document.getElementById('{{ category[0] }}').scrollIntoView()" >{{ category[0] }}</a>
 			{% endfor %}
 		</div>
 	</div>
