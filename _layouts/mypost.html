@@ -1,17 +1,22 @@
 {%- assign CSS = "common.css,post.css,highlight.css" -%}
-{%- assign JS = "blog.js" -%}
+{%- assign JS = "blog.js,plugins.js" -%}
 {%- assign pageCSS = CSS | split: "," -%}
 {%- assign pageJS =  JS | split: "," -%}
 {%- assign buildAt = site.time | date: "%Y%m%d%H%M%S" -%}
+{%- assign words = page.content | strip_html | strip_newlines | remove: " " | size -%} 
+{%- assign readTime = words | divided_by: 350 -%}
 <!DOCTYPE html>
 <html>
 {% include head.html %}
 <body ondragstart="return false;">
 {% include header.html %}
+
 <div class="page page-post animation-fade-up">
   <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
   {% if page.date %}
-  <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
+  <div class="subtitle-left">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
+  <div class="subtitle-right">约{{ words }}字 <b>·</b> 约{{ readTime }}分钟</div>
+<div class="clear"></div>
   {% endif %}
   <div class="post">
     <nav id="toc" ></nav>

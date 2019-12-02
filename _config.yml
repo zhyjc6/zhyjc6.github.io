@@ -5,7 +5,6 @@ title: zhyjc6's Blog
 description: zhyjc6的个人博客
 keywords: zhyjc6,Blog
 author: zhyjc6
-footerText: 'No Copyright'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
@@ -36,20 +35,6 @@ menu:
     url: /pages/chat.html
   - title: 关于
     url: /pages/about.html
-
-# 自定义插件,具体说明请看README文档
-customPlugins:
-  - use: true
-    file: 'plugin-mta-stats.html'
-    sid: 500697048
-    cid: 500697053
-  - use: true
-    file: 'plugin-baidu-push.html'
-  - use: true
-    file: 'plugin-click-effect.html'
-  - use: false
-    file: 'plugin-mathjax.html'
-
 
 
 # 友情链接

@@ -198,18 +198,6 @@ blog.ajax = function(option, success, fail) {
   xmlHttp.send()
 }
 
-// 打印主题标识,请保留出处
-blog.addLoadEvent(function() {
-  var style1 = 'background:#4BB596;color:#ffffff;border-radius: 2px;'
-  var style2 = 'color:#000000;'
-  var author = ' TMaize'
-  var github = ' https://github.com/TMaize/tmaize-blog'
-  var build = ' ' + blog.buildAt
-  console.info('%c Theme Author %c' + author, style1, style2)
-  console.info('%c Theme GitHub %c' + github, style1, style2)
-  console.info('%c Site  Build  %c' + build, style1, style2)
-})
-
 // 新建DIV包裹TABLE
 blog.addLoadEvent(function() {
   // 文章页生效

@@ -10,12 +10,24 @@
   line-height: 1;
   padding-bottom: 16px;
 }
-.page-post .subtitle {
+.subtitle-left {
   font-size: 13px;
   color: #999999;
   position: relative;
   top: -6px;
   line-height: 1;
+  float: left;
+}
+.subtitle-right {
+  font-size: 13px;
+  color: #999999;
+  position: relative;
+  top: -6px;
+  line-height: 1;
+  float: right;
+}
+.clear {
+  clear: both;
 }
 .page-post .post > * {
   margin: 18px 0;

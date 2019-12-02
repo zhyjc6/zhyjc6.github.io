@@ -5,12 +5,6 @@
 {% for js in pageJS %}
 <script type="text/javascript" src="{{site.baseUrl}}/static/js/{{ js }}?t={{ buildAt }}"></script>
 {% endfor %}
-<!-- 引入配置的插件 -->
-{% for cp in site.customPlugins %}
-  {% if cp.use %}
-    {% include {{cp.file}} values=cp %}
-  {% endif %}
-{% endfor %}
 
 <!--调用tocbot生成文章目录-->
 <script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
