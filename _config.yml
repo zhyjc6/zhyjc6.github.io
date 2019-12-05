@@ -10,16 +10,12 @@ author: zhyjc6
 permalink: /posts/:year/:month/:day/:title.html
 kramdown:
   auto_ids: true
-  input: GFM
 exclude: ['CNAME', 'README.md', 'build-tool']
 
 # 域名配置
 # baseUrl配置,如果网站部署在根目录下的目录中，请设置为 /目录名
 domainUrl: 'https://zhyjc6.github.io'
 baseUrl: ''
-
-# 吐个槽地址，会在chat页面中重定向到该地址
-tucaoUrl: https://support.qq.com/product/87134
 
 # 菜单
 menu:

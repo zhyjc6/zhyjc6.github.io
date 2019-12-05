@@ -4,31 +4,25 @@
   word-break: break-all;
 }
 .page-post .title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #666666;
   line-height: 1;
-  padding-bottom: 16px;
+  text-align: center;
 }
-.subtitle-left {
-  font-size: 13px;
+#subtitle {  
+  margin-bottom: 40px;
+  border-bottom: 2px solid #DDDDDD;
+  text-align: center;
+}
+#subtitle span {  
   color: #999999;
+  font-size: 11px;
   position: relative;
-  top: -6px;
   line-height: 1;
-  float: left;
 }
-.subtitle-right {
-  font-size: 13px;
-  color: #999999;
-  position: relative;
-  top: -6px;
-  line-height: 1;
-  float: right;
-}
-.clear {
-  clear: both;
-}
+
+
 .page-post .post > * {
   margin: 18px 0;
 }
@@ -162,10 +156,6 @@
   .page-post .title {
     padding-top: 12px;
     padding-bottom: 12px;
-  }
-  .page-post .subtitle {
-    top: -2px;
-    font-size: 11px;
   }
   .page-post pre code {
     font-size: 12px;
