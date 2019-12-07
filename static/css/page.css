@@ -129,4 +129,15 @@
   .list-category div a {
     font-size: 13px;
   }
+
+  .list-category div a {
+    display: inline-block;
+    margin-top: 10px;
+    height: auto;
+    width: 95px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

@@ -149,7 +149,7 @@
 .page-post .table-container table tbody tr:last-child {
   border-bottom: 0;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .page-post {
     font-size: 13px;
   }
@@ -171,7 +171,8 @@
   position: fixed;
   left: 0px;
   top: 10px;
-  max-width: 300px;
+  width: 250px;
+  max-width: 20%;
   height: auto;
   margin: 0px;
   padding: 0px;
