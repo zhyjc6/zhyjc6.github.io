@@ -22,9 +22,9 @@
     <link rel="icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/img/favicon.ico" type="image/x-icon"/>
     <!--引入CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/common.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/highlight.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/post.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/common-0.0.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/highlight-0.0.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/post-0.0.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css">
   </head>
@@ -54,7 +54,7 @@
   <!--全局属性blog-->
   <script>window.blog={baseUrl:"{{site.baseUrl}}"}</script>
   <!-- 引入JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/blog.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/blog-0.0.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/md5.min.js"></script>
   <script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
@@ -71,7 +71,10 @@
     headingsOffset: 1,
     fixedSidebarOffset: 'auto',
     orderedList: true,
-  });
+  })
+  </script>
+  {% unless page.isPage %}
+  <script>
     //调用gitalk部署评论系统
     var gitalk = new Gitalk({
       clientID: 'a584baecdfafe2011bd7',
@@ -84,6 +87,7 @@
     });
     gitalk.render('gitalk-container')
   </script>
+  {% endunless %}
 
   {% include footer.html %}
   </body>
