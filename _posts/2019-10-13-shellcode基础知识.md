@@ -36,7 +36,7 @@ categories: [PWN,科普]
 
 **机器码**：
 
-![img](14533806436249.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122015.png)
 
 > 机器码(machine code)，学名机器语言指令，有时也被称为原生码（Native Code），是电脑的CPU可直接解读的数据。通常意义上来理解的话，机器码就是计算机可以直接执行，并且执行速度最快的代码。
 
@@ -48,7 +48,7 @@ categories: [PWN,科普]
 >
 > 字节码主要为了实现特定软件运行和软件环境、与硬件环境无关。字节码的实现方式是通过编译器和虚拟机。编译器将源码编译成字节码，特定平台上的虚拟机将字节码转译为可以直接运行的指令。字节码的典型应用为[Java bytecode](https://zh.wikipedia.org/wiki/Java_bytecode)。
 
-![1570863863405](1570863863405.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122032.png)
 
 
 
@@ -134,13 +134,13 @@ int main(int argc, char **argv)
 
 ​     1. 把字符形式的shellcode，转换为字节码形式的shellcode：
 
-![1570885873690](1570885873690.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122056.png)
 
 
 
 ​    2. 执行shellcode的功能。将shellcode字节 码文件拖入到工具输入框中，点击“执行 Shellcode”按钮，shellcode便可以得到执行：
 
-![1570885936195](1570885936195.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122113.png)
 
 
 

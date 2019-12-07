@@ -43,7 +43,7 @@ Windows 的 API 是通过动态链接库中的导出函数来实现的。Win_32 
 
 所有 win_32 程序都会加载 ntdll.dll 和 kernel32.dll 这两个基础的动态链接库。如果想要 在 win_32 平台下定位 kernel32.dll 中的 API 地址，可以采用如下方法：
 
-![1571474241042](1571474241042.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122253.png)
 
 1. 首先通过段选择字 FS 在内存中找到当前的线程环境块 TEB。 
 2. 线程环境块偏移位置为 0x30 的地方存放着指向进程环境块 PEB 的指针。 
@@ -132,7 +132,7 @@ Windows 的 API 是通过动态链接库中的导出函数来实现的。Win_32 
 
 ### shellcode对应的执行流程
 
-![LocateAPI](stackoverflow_1_locateAPI.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122324.png)
 
 
 
@@ -166,45 +166,45 @@ shellcode = (int (*)()) evil;
 
 保存代码为sc1.c并拖入vc6.0,编译，运行，弹出计算器。为了使代码更加简洁，我们进入工程-->设置-->C/C++-->工程选项 中删除 /GZ参数。
 
-![1571503838362](1571503838362.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122344.png)
 
 
 
 把debug模式下的sc1.exe文件拖入ollyice中，定位到main函数：
 
-![1571504269498](1571504269498.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122425.png)
 
 
 
 进入evil函数：
 
-![1571504353741](1571504353741.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122441.png)
 
 在调用winexec函数处下断点，按F9运行至此处：
 
-![1571504522980](1571504522980.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122503.png)
 
-![1571504553783](1571504553783.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122552.png)
 
-![1571504590506](1571504590506.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122605.png)
 
 可以看到将要执行winexec("calc",1)调出计算器窗口。F8单步执行成功调出计算器窗口
 
-![1571504829241](1571504829241.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122626.png)
 
 
 
 收尾阶段。此时鼠标手动关闭计算器窗口，在CALL EBP 处按F2下断点，F9直接运行至此处
 
-![1571504965489](1571504965489.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122643.png)
 
-![1571504987485](1571504987485.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122709.png)
 
-![1571504999175](1571504999175.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122746.png)
 
 可以看出将要执行WinExec(0)函数用于退出，F8单步运行，系统自动关闭cmd窗口并终止进程。
 
-![1571505109632](1571505109632.png)
+![](https://cdn.jsdelivr.net/gh/zhyjc6/My-Pictures/2019/12/20191207122810.png)
 
 
 
