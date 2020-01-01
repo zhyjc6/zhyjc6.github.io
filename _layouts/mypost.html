@@ -22,15 +22,16 @@
     <link rel="icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/img/favicon.ico" type="image/x-icon"/>
     <!--引入CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/common-0.0.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/highlight-0.0.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/css/post-0.0.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
+    <link rel="stylesheet" href="{{site.baseUrl}}/static/css/common.css">
+    <link rel="stylesheet" href="{{site.baseUrl}}/static/css/highlight.css">
+    <link rel="stylesheet" href="{{site.baseUrl}}/static/css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css">
   </head>
   
   <body ondragstart="return false;">
     {% include header.html %}
+    <div class="toc" style="position: fixed; left: 0; top: 10px; height: auto; max-width: 20%" ></div>
 
     <div class="page page-post animation-fade-up">
       <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
@@ -45,10 +46,10 @@
       {% endif %}
 
       <div class="post">
-        <nav id="toc" ></nav>
         {{ content }}
         <div id="gitalk-container"></div>
       </div>
+
     </div>
   
   <!--全局属性blog-->
@@ -56,21 +57,17 @@
   <!-- 引入JS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/blog-0.0.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/md5.min.js"></script>
-  <script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
   
   <script>
     //调用tocbot生成文章目录
     tocbot.init({
-    tocSelector: '#toc',
+    tocSelector: '.toc',
     contentSelector: '.post',
     headingSelector: 'h1, h2, h3, h4, h5, h6',
     collapseDepth: 0,
-    scrollSmooth: true,
-    scrollSmoothDuration: 0,
-    headingsOffset: 1,
-    fixedSidebarOffset: 'auto',
-    orderedList: true,
+    headingsOffset: 200,
   })
   </script>
   {% unless page.isPage %}

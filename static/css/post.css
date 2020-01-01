@@ -163,17 +163,7 @@
   .page-post .post > * {
     margin: 15px 0;
   }
-  #toc {
+  .toc {
     display: none;
   }
-}
-#toc {
-  position: fixed;
-  left: 0px;
-  top: 10px;
-  width: 250px;
-  max-width: 20%;
-  height: auto;
-  margin: 0px;
-  padding: 0px;
 }
