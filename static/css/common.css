@@ -14,7 +14,7 @@ body {
   scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: Consolas, 'Helvetica Neue', Helvetica, Arial, 'PingFang SC',
+  font-family: 'Consolas', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC',
     'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei',
     sans-serif;
 }

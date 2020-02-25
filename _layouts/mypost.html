@@ -31,7 +31,14 @@
   
   <body ondragstart="return false;">
     {% include header.html %}
-    <div class="toc" style="position: fixed; left: 0; top: 10px; height: auto; max-width: 20%" ></div>
+    <div class="toc" style="position: fixed;
+                            left: 0; top: 10px;
+                            width: calc(20%);
+                            font-size: smaller;
+                            font-weight: bolder;
+                            line-height: 1.8;
+                            overflow: hidden;
+                            white-space: nowrap;"> </div>
 
     <div class="page page-post animation-fade-up">
       <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
