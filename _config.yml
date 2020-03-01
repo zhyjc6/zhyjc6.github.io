@@ -8,8 +8,8 @@ author: zhyjc6
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
-kramdown:
-  auto_ids: true
+markdown: kramdown
+auto_ids: true
 exclude: ['CNAME', 'README.md', 'build-tool']
 
 # 域名配置
