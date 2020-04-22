@@ -14,9 +14,7 @@ body {
   scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Consolas', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC',
-    'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei',
-    sans-serif;
+  font-family: 'SFMono-Regular', 'Consolas', 'Times New Roman', 'KaiTi', '楷体', 'STKaiti', '华文楷体', 'serif', 'Microsoft YaHei', '微软雅黑';
 }
 * {
   box-sizing: border-box;
@@ -182,9 +180,9 @@ body {
   flex-grow: 1;
 }
 .header .menu a {
-  font-size: 15px;
+  font-size: 18px;
   display: inline-block;
-  margin: 0 9px;
+  margin: 0 12px;
   padding: 3px 0;
   white-space: nowrap;
 }
