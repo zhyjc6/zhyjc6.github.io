@@ -73,12 +73,7 @@ a {
 body::-webkit-scrollbar {
   display: none;
 }
-.select-none {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
+
 .animation-fade-up {
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
@@ -198,19 +193,7 @@ footer a {
   color: #000000;
   white-space: nowrap;
 }
-#moveUp {
-  position: fixed;
-  right: 20px;
-  bottom: -40px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: bottom 500ms ease-in-out 0ms;
-  -webkit-transition: bottom 500ms ease-in-out 0ms;
-}
-#moveUp.show {
-  bottom: 20px;
-}
+
 @media screen and (max-width: 560px) {
   .header {
     padding: 35px 0 20px 0;
@@ -222,13 +205,6 @@ footer a {
   .header .menu a {
     margin: 0 4px;
     font-size: 14px;
-  }
-  #moveUp {
-    right: 14px;
-    bottom: -40px;
-  }
-  #moveUp.show {
-    bottom: 10px;
   }
 }
 

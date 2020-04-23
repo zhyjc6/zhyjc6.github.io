@@ -1,6 +1,4 @@
 <footer>
-  <img id="moveUp" class="select-none" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/img/up.svg">
-
   <!--知识共享协议-->
   <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="hover-underline">
     <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
@@ -33,6 +31,9 @@
       var h=date.getHours(); //获取小时
       var m=date.getMinutes(); //获取分钟
       var s=date.getSeconds(); //获取秒
+      if (h < 10) h = "0" + h;
+      if (m < 10) m = "0" + m;
+      if (s < 10) s = "0" + s;
       var d=document.getElementById('now_time'); 
       d.innerHTML='当前时间:'+year+'年'+mon+'月'+da+'日'+'星期'+day+' '+h+':'+m+':'+s;
     },1000) 
