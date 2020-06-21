@@ -194,6 +194,48 @@ footer a {
   white-space: nowrap;
 }
 
+#back-top {
+  position: fixed;
+  z-index: 999;
+  right: 16px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  border-radius: 10%;
+  background-color: #000000;
+  opacity: 0.45;
+  overflow: hidden;
+  -webkit-transform: translateY(66px);
+  transform: translateY(66px);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+}
+#back-top.show {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+#back-top > span {
+  display: block;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  top: 13px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+}
+#back-top > span:first-child {
+  background-color: #ffffff;
+}
+#back-top > span:last-child {
+  background-color: #000000;
+  -webkit-transform: translate(-50%, 16%) rotate(45deg);
+  transform: translate(-50%, 16%) rotate(45deg);
+}
+
 @media screen and (max-width: 560px) {
   .header {
     padding: 35px 0 20px 0;

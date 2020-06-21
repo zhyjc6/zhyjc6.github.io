@@ -20,7 +20,7 @@
     <meta name="keywords" content="{{ site.author }}{% for category in page.categories %},{{ category }}{% endfor %}"/>
     {% endif %}
     <link rel="icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon"/>
     <!--引入CSS-->
     <link rel="stylesheet" href="{{site.baseUrl}}/static/css/common.css">
     <link rel="stylesheet" href="{{site.baseUrl}}/static/css/highlight.css">
@@ -63,8 +63,8 @@
   <!--全局属性blog-->
   <script>window.blog={baseUrl:"{{site.baseUrl}}"}</script>
   <!-- 引入JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/blog-0.0.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhyjc6/zhyjc6.github.io/static/js/md5.min.js"></script>
+  <script type="text/javascript" src="{{site.baseUrl}}/static/js/blog.js"></script>
+  <script type="text/javascript" src="{{site.baseUrl}}/static/js/md5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
   
@@ -87,7 +87,7 @@
       repo: 'blog-comments',
       owner: 'zhyjc6',
       admin: ['zhyjc6'],
-      id: md5(location.pathname), // Ensure uniqueness and length less than 50
+      id: blog.md5(location.pathname), // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     });
     gitalk.render('gitalk-container')

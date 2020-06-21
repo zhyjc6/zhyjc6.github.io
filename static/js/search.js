@@ -60,7 +60,7 @@ blog.addLoadEvent(function() {
       return
     }
     // <> 替换
-    key = key.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    key = key.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&/g, '&amp;')
 
     keyBefore = key
     var doms = document.querySelectorAll('.list-search li')
@@ -121,6 +121,7 @@ blog.addLoadEvent(function() {
     if (!inputLock) {
       search(event.target.value)
     }
+
   })
   blog.addEvent(input, 'compositionstart', function(event) {
     inputLock = true
