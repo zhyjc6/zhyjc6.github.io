@@ -1,7 +1,7 @@
 ---
-title: test: backup-main-branch
+title: test_backup-main-branch
 layout: mypost
-categories: []
+categories: [test]
 ---
 
 
