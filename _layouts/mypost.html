@@ -14,13 +14,8 @@
     <meta name="google-site-verification" content="SKzPI1kQJwH5rtS-KeZEGsxToJDIP9Utt1dMyJR9gFw" />
     <meta name="baidu-site-verification" content="0L4AxCA46Q" />
     <meta name="author" content="{{ site.author }}" />
-    {% if page.isPage %}
-    <meta name="description" content="{{ site.description }}"/>
-    <meta name="keywords" content="{{ site.keywords }}"/>
-    {% else %}
     <meta name="description" content="{{ page.title }}"/>
     <meta name="keywords" content="{{ site.author }}{% for category in page.categories %},{{ category }}{% endfor %}"/>
-    {% endif %}
     <link rel="icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="{{site.baseUrl}}/static/img/favicon.ico" type="image/x-icon"/>
     <!--引入CSS-->
@@ -81,7 +76,6 @@
     headingsOffset: 200,
   })
   </script>
-  {% unless page.isPage %}
   <script>
     //调用gitalk部署评论系统
     var gitalk = new Gitalk({
@@ -95,7 +89,6 @@
     });
     gitalk.render('gitalk-container')
   </script>
-  {% endunless %}
 
   {% include footer.html %}
   </body>

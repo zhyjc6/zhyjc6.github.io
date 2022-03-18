@@ -1,6 +1,5 @@
 ---
-layout: mypost
-isPage: true
+layout: page
 title: About
 ---
 
